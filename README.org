@@ -1,0 +1,17 @@
+* pytest运行测试
+# 运行所有测试
+uv run pytest
+
+# 显示详细输出
+uv run pytest -v
+
+# 运行特定测试文件
+uv run pytest tests/test_card.py
+uv run pytest tests/test_evaluator.py
+
+# 运行特定测试类或方法
+uv run pytest tests/test_evaluator.py::TestHandRankDetection
+uv run pytest tests/test_evaluator.py::TestHandRankDetection::test_royal_flush
+
+# 失败时显示详细错误
+uv run pytest -v --tb=short
