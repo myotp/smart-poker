@@ -137,7 +137,8 @@ class PreflopDataset(Dataset):
             # 保存到缓存
             if cache_path is not None:
                 cache_path.parent.mkdir(parents=True, exist_ok=True)
-                save_preflop_data(cache_path, n_opponents, mc_samples, seed)
+                np.savez(cache_path, X=self.X, y=self.y)
+                print(f"数据已保存到: {cache_path}")
 
         # 转换为 tensor
         self.X = torch.from_numpy(self.X)
